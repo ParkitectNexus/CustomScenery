@@ -1,0 +1,58 @@
+ManifestFileVersion: 0
+CRC: 1511748018
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fffd487bc16f8dbf6819b8fc77d3384a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0a940917657721e0221e2053ac6a68e1
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+Assets:
+- Assets/Terrain Assets/Bushes/Fern.fbx
+- Assets/Terrain Assets/Bushes/Bush1.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/ScotsPineTypeA.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/ScotsPineTypeB.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/Sycamore.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/Bamboo.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/Palm (group).fbx
+- Assets/Terrain Assets/Bushes/Bush2.fbx
+- Assets/Terrain Assets/Bushes/Bush3.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/ThinTree.fbx
+- Assets/Terrain Assets/Bushes/Bush4.fbx
+- Assets/Terrain Assets/Bushes/Bush5.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/Willow.fbx
+- Assets/Terrain Assets/Bushes/Bush5LowPoly.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/Palm.fbx
+- Assets/Terrain Assets/Bushes/FernMesh.fbx
+- Assets/Terrain Assets/Bushes/Bush6.fbx
+- Assets/Resources/sphere.obj
+- Assets/Terrain Assets/Bushes/Bush6LowPoly.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/BananaPlant.fbx
+- Assets/Terrain Assets/Rocks/RockMesh.fbx
+- Assets/Terrain Assets/Bushes/Bush7.fbx
+- Assets/Terrain Assets/Bushes/Grass1Leaves.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/Mimosa.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/Alder.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/Banyan.fbx
+- Assets/Terrain Assets/Trees Ambient-Occlusion/JapaneseMaple.fbx
+Dependencies: []
