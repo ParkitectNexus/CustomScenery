@@ -1,58 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using Custom_Scenery.Decorators;
+using MiniJSON;
 using UnityEngine;
 
 namespace Custom_Scenery
 {
-    class SceneryLoader : MonoBehaviour
+    internal class SceneryLoader : MonoBehaviour
     {
-        private List<Deco> _sceneryObjects = new List<Deco>(); 
-
-        private List<string> _scenery = new List<string>()
-        {
-            "Bush1",
-            "Bush2",
-            "Bush3",
-            "Bush4",
-            "Bush5",
-            "Bush6",
-            "Bush7",
-            "Fern",
-            "RockMesh",
-            "Alder",
-            "Bamboo",
-            "BananaPlant",
-            "Banyan",
-            "JapaneseMaple",
-            "Mimosa",
-            "Palm",
-            "Palm (group)",
-            "ScotsPineTypeA",
-            "Sycamore",
-            "ThinTree",
-            "Willow",
-        };
-
+        private List<BuildableObject> _sceneryObjects = new List<BuildableObject>();
+        
         public void LoadScenery()
         {
+            var dict = Json.Deserialize(File.ReadAllText(@"C:\Users\luukh\Desktop\ParkitectRecentBuild\mods\Custom Scenery\scenery.json")) as Dictionary<string, object>;
+
+            GameObject hider = new GameObject();
+
+            hider.SetActive(false);
+
             using (WWW www = new WWW("file://" + Application.streamingAssetsPath + "/mods/custom-scenery/scenery"))
             {
                 if (www.error != null)
                     throw new Exception("Download had an error:" + www.error);
 
                 AssetBundle bundle = www.assetBundle;
-
-                foreach (string s in _scenery)
+                
+                foreach (KeyValuePair<string, object> pair in dict)
                 {
-                    GameObject scenery = Instantiate(bundle.LoadAsset(s)) as GameObject;
+                    try
+                    {
+                        var options = pair.Value as Dictionary<string, object>;
 
-                    Deco d = scenery.AddComponent<Deco>();
+                        GameObject asset;
 
-                    d.price = 100;
+                        asset = (new TypeDecorator((string)options["type"])).Decorate(options, bundle);
+                        asset = (new PriceDecorator((double)options["price"])).Decorate(asset, options, bundle);
+                        asset = (new NameDecorator(pair.Key)).Decorate(asset, options, bundle);
 
-                    ScriptableSingleton<AssetManager>.Instance.registerObject(d);
+                        if (options.ContainsKey("grid"))
+                            asset = (new GridDecorator((bool)options["grid"])).Decorate(asset, options, bundle);
 
-                    _sceneryObjects.Add(d);
+                        DontDestroyOnLoad(asset);
+
+                        AssetManager.Instance.registerObject(asset.GetComponent<BuildableObject>());
+                        _sceneryObjects.Add(asset.GetComponent<BuildableObject>());
+
+                        // hide it from view
+                        asset.transform.parent = hider.transform;
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.Log(e);
+                        // ignore
+                    }
                 }
 
                 bundle.Unload(false);
@@ -63,7 +64,7 @@ namespace Custom_Scenery
         {
             foreach (Deco deco in _sceneryObjects)
             {
-                ScriptableSingleton<AssetManager>.Instance.unregisterObject(deco);
+                AssetManager.Instance.unregisterObject(deco);
             }
         }
     }

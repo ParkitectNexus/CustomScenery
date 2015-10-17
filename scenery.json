@@ -1,0 +1,112 @@
+﻿{
+    "Bone Bench": {
+		"model": "SM_BoneBench",
+		"type": "seating",
+		"seating_options": {
+			"seat_count": 2.,
+			"has_back_rest": false
+		},
+		"price": 100.5
+	},
+    "Brontosaurus": {
+		"model": "SM_Brontosaurus",
+		"type": "deco",
+		"price": 100.5,
+		"grid": true
+	},
+    "Brontosaurus 1 tile": {
+		"model": "SM_Brontosaurus_1Tile",
+		"type": "deco",
+		"price": 100.5,
+		"grid": true
+	},
+    "Dino Cage": {
+		"model": "SM_DinoCage",
+		"type": "deco",
+		"price": 100.5,
+		"grid": true
+	},
+    "Dino Cage Broken": {
+		"model": "SM_DinoCage_Broken",
+		"type": "deco",
+		"price": 100.5,
+		"grid": true
+	},
+    "Dino Poop": {
+		"model": "SM_DinoPoop",
+		"type": "deco",
+		"price": 100.5
+	},
+    "Dino Rib Cage": {
+		"model": "SM_DinoRibCage",
+		"type": "deco",
+		"price": 100.5
+	},
+    "Dinosaur Sign": {
+		"model": "SM_DinosaurSign",
+		"type": "deco",
+		"price": 100.5
+	},
+    "Egg Trash Can A": {
+		"model": "SM_EggTrashCan",
+		"type": "trashbin",
+		"price": 100.5
+	},
+    "Egg Trash Can B": {
+		"model": "SM_EggTrashCan_b",
+		"type": "trashbin",
+		"price": 100.5
+	},
+    "Jurassic Fence": {
+		"type": "fence",
+		"fence_options": {
+			"hasPost": true,
+			"flat": "SM_JurassicFence",
+			"post": "SM_JurassicFencePost"
+		}
+		"price": 100.5
+	},
+    "Jurassic Fence Broken": {
+		"type": "fence",
+		"fence_options": {
+			"hasPost": true,
+			"flat": "SM_JurassicFence_Broken",
+			"post": "SM_JurassicFencePost"
+		}
+		"price": 100.5
+	},
+    "Jurassic Gate Left": {
+		"model": "SM_JurassicGate_L",
+		"type": "deco",
+		"price": 100.5
+	},
+    "Jurassic Gate Right": {
+		"model": "SM_JurassicGate_R",
+		"type": "deco",
+		"price": 100.5
+	},
+    "Palm Tree": {
+		"model": "SM_PalmTree",
+		"type": "deco",
+		"price": 100.5
+	},
+    "Stegosaurus": {
+		"model": "SM_Stegosaurus",
+		"type": "deco",
+		"price": 100.5
+	},
+    "Velociraptor": {
+		"model": "SM_Velociraptor",
+		"type": "deco",
+		"price": 100.5
+	},
+    "Jurrasic Wooden Fence": {
+		"type": "fence",
+		"fence_options": {
+			"hasPost": true,
+			"flat": "SM_WoodenFence",
+			"post": "SM_WoodenFencePost"
+		}
+		"price": 100.5
+	}
+}

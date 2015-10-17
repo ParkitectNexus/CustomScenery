@@ -55,8 +55,18 @@
   <ItemGroup>
     <None Include="mod.json" />
     <None Include="README.md" />
+    <None Include="scenery.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Decorators\GridDecorator.cs" />
+    <Compile Include="Decorators\IDecorator.cs" />
+    <Compile Include="Decorators\NameDecorator.cs" />
+    <Compile Include="Decorators\PriceDecorator.cs" />
+    <Compile Include="Decorators\TypeDecorator.cs" />
+    <Compile Include="Decorators\Type\FenceDecorator.cs" />
+    <Compile Include="Decorators\Type\SeatingDecorator.cs" />
+    <Compile Include="Decorators\Type\DecoDecorator.cs" />
+    <Compile Include="Decorators\Type\TrashBinDecorator.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="SceneryLoader.cs" />
   </ItemGroup>

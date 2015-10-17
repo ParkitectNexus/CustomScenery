@@ -24,5 +24,6 @@ namespace Custom_Scenery
 
         public string Name { get { return "Custom Scenery"; } }
         public string Description { get { return "Custom Scenery"; } }
+        public string Path { get; set; }
     }
 }
