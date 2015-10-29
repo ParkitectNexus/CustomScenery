@@ -114,5 +114,10 @@
 			"post": "SM_JurassicFencePost"
 		}
 		"price": 100.5
+	},
+	"Jurassic Lamp": {
+		"type": "lamp",
+		"model": "SM_WoodenFencePost",
+		"price": 100.5
 	}
 }

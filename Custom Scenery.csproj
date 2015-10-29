@@ -65,6 +65,7 @@
     <Compile Include="Decorators\PriceDecorator.cs" />
     <Compile Include="Decorators\TypeDecorator.cs" />
     <Compile Include="Decorators\Type\FenceDecorator.cs" />
+    <Compile Include="Decorators\Type\LampDecorator.cs" />
     <Compile Include="Decorators\Type\SeatingAutoDecorator.cs" />
     <Compile Include="Decorators\Type\DecoDecorator.cs" />
     <Compile Include="Decorators\Type\SeatingDecorator.cs" />

@@ -32,10 +32,13 @@ namespace Custom_Scenery.Decorators
                 case "fence":
                     (new FenceDecorator()).Decorate(go, options, assetBundle);
                     break;
+                case "lamp":
+                    (new LampDecorator()).Decorate(go, options, assetBundle);
+                    break;
             }
         }
 
-        internal GameObject Decorate(Dictionary<string, object> options, AssetBundle bundle)
+        public GameObject Decorate(Dictionary<string, object> options, AssetBundle bundle)
         {
             GameObject asset = null;
 
@@ -45,6 +48,7 @@ namespace Custom_Scenery.Decorators
                 case "trashbin":
                 case "seating":
                 case "seating_auto":
+                case "lamp":
                     asset = Object.Instantiate(bundle.LoadAsset((string) options["model"])) as GameObject;
                     break;
                 case "fence":
