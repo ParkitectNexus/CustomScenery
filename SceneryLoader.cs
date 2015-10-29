@@ -35,15 +35,13 @@ namespace Custom_Scenery
                         try
                         {
                             var options = pair.Value as Dictionary<string, object>;
-
-                            GameObject asset;
-
-                            asset = (new TypeDecorator((string)options["type"])).Decorate(options, bundle);
-                            asset = (new PriceDecorator((double)options["price"])).Decorate(asset, options, bundle);
-                            asset = (new NameDecorator(pair.Key)).Decorate(asset, options, bundle);
+                            
+                            GameObject asset = (new TypeDecorator((string)options["type"])).Decorate(options, bundle);
+                            (new PriceDecorator((double)options["price"])).Decorate(asset, options, bundle);
+                            (new NameDecorator(pair.Key)).Decorate(asset, options, bundle);
 
                             if (options.ContainsKey("grid"))
-                                asset = (new GridDecorator((bool)options["grid"])).Decorate(asset, options, bundle);
+                                (new GridDecorator((bool)options["grid"])).Decorate(asset, options, bundle);
 
                             DontDestroyOnLoad(asset);
 

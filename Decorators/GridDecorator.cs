@@ -15,14 +15,12 @@ namespace Custom_Scenery.Decorators
             _grid = grid;
         }
         
-        public GameObject Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
+        public void Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
         {
             if (go.GetComponent<Deco>() != null && _grid)
             {
                 go.GetComponent<Deco>().buildOnGrid = _grid;
             }
-            
-            return go;
         }
     }
 }

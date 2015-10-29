@@ -8,11 +8,9 @@ namespace Custom_Scenery.Decorators.Type
 {
     class TrashBinDecorator : IDecorator
     {
-        public GameObject Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
+        public void Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
         {
             go.AddComponent<TrashBin>();
-
-            return go;
         }
     }
 }

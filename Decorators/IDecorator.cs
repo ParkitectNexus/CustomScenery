@@ -8,6 +8,6 @@ namespace Custom_Scenery.Decorators
 {
     interface IDecorator
     {
-        GameObject Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle);
+        void Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle);
     }
 }

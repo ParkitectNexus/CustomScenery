@@ -13,28 +13,26 @@ namespace Custom_Scenery.Decorators
             _type = type;
         }
 
-        public GameObject Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
+        public void Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
         {
             switch (_type)
             {
                 case "deco":
-                    go = (new DecoDecorator()).Decorate(go, options, assetBundle);
+                    (new DecoDecorator()).Decorate(go, options, assetBundle);
                     break;
                 case "trashbin":
-                    go = (new TrashBinDecorator()).Decorate(go, options, assetBundle);
+                    (new TrashBinDecorator()).Decorate(go, options, assetBundle);
                     break;
                 case "seating":
-                    go = (new SeatingDecorator()).Decorate(go, options, assetBundle);
+                    (new SeatingDecorator()).Decorate(go, options, assetBundle);
                     break;
                 case "seating_auto":
-                    go = (new SeatingAutoDecorator()).Decorate(go, options, assetBundle);
+                    (new SeatingAutoDecorator()).Decorate(go, options, assetBundle);
                     break;
                 case "fence":
-                    go = (new FenceDecorator()).Decorate(go, options, assetBundle);
+                    (new FenceDecorator()).Decorate(go, options, assetBundle);
                     break;
             }
-
-            return go;
         }
 
         internal GameObject Decorate(Dictionary<string, object> options, AssetBundle bundle)
@@ -54,7 +52,9 @@ namespace Custom_Scenery.Decorators
                     break;
             }
 
-            return Decorate(asset, options, bundle);
+            Decorate(asset, options, bundle);
+
+            return asset;
         }
     }
 }

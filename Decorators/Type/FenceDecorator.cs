@@ -5,7 +5,7 @@ namespace Custom_Scenery.Decorators.Type
 {
     class FenceDecorator : IDecorator
     {
-        public GameObject Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
+        public void Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
         {
             go.AddComponent<Fence>();
 
@@ -19,8 +19,6 @@ namespace Custom_Scenery.Decorators.Type
             go.GetComponent<Fence>().flatGO = flat;
             go.GetComponent<Fence>().postGO = post;
             go.GetComponent<Fence>().hasMidPosts = false;
-
-            return go;
         }
     }
 }

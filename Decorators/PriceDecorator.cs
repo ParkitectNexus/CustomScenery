@@ -12,11 +12,9 @@ namespace Custom_Scenery.Decorators
             _price = price;
         }
 
-        public GameObject Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
+        public void Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
         {
             go.GetComponent<BuildableObject>().price = (float) _price;
-
-            return go;
         }
     }
 }

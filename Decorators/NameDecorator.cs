@@ -15,12 +15,10 @@ namespace Custom_Scenery.Decorators
             _name = name;
         }
 
-        public GameObject Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
+        public void Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
         {
             go.GetComponent<BuildableObject>().setDisplayName(_name);
             go.name = _name;
-
-            return go;
         }
     }
 }

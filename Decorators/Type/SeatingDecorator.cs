@@ -5,7 +5,7 @@ namespace Custom_Scenery.Decorators.Type
 {
     class SeatingDecorator : IDecorator
     {
-        public GameObject Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
+        public void Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
         {
             if (options.ContainsKey("seating_options"))
             {
@@ -15,8 +15,6 @@ namespace Custom_Scenery.Decorators.Type
 
                 go.GetComponent<Seating>().hasBackRest = (bool)seatingOptions["has_back_rest"];
             }
-
-            return go;
         }
     }
 }
