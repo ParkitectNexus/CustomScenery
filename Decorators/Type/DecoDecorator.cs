@@ -12,6 +12,9 @@ namespace Custom_Scenery.Decorators.Type
         {
             go.AddComponent<global::Deco>();
 
+            if (options.ContainsKey("heightDelta"))
+                (new HeightDecorator((double)options["heightDelta"])).Decorate(go, options, assetBundle);
+
             return go;
         }
     }

@@ -21,7 +21,7 @@ namespace Custom_Scenery.Decorators
             {
                 go.GetComponent<Deco>().buildOnGrid = _grid;
             }
-
+            
             return go;
         }
     }

@@ -12,6 +12,10 @@ namespace Custom_Scenery
 
             _go.AddComponent<SceneryLoader>();
 
+            _go.GetComponent<SceneryLoader>().Path = Path;
+
+            _go.GetComponent<SceneryLoader>().Identifier = Identifier;
+
             _go.GetComponent<SceneryLoader>().LoadScenery();
         }
 
@@ -22,8 +26,9 @@ namespace Custom_Scenery
             Object.Destroy(_go);
         }
 
-        public string Name { get { return "Custom Scenery"; } }
-        public string Description { get { return "Custom Scenery"; } }
+        public string Name { get { return "Custom Scenery Pack"; } }
+        public string Description { get { return "Custom Scenery Pack"; } }
         public string Path { get; set; }
+        public string Identifier { get; set; }
     }
 }

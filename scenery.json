@@ -40,7 +40,8 @@
     "Dino Rib Cage": {
 		"model": "SM_DinoRibCage",
 		"type": "deco",
-		"price": 100.5
+		"price": 100.5,
+		"heightDelta": 0.25
 	},
     "Dinosaur Sign": {
 		"model": "SM_DinosaurSign",
@@ -55,15 +56,6 @@
     "Egg Trash Can B": {
 		"model": "SM_EggTrashCan_b",
 		"type": "trashbin",
-		"price": 100.5
-	},
-    "Jurassic Fence": {
-		"type": "fence",
-		"fence_options": {
-			"hasPost": true,
-			"flat": "SM_JurassicFence",
-			"post": "SM_JurassicFencePost"
-		}
 		"price": 100.5
 	},
     "Jurassic Fence Broken": {
@@ -100,12 +92,26 @@
 		"type": "deco",
 		"price": 100.5
 	},
+    "Velociraptors": {
+		"model": "SM_Velociraptors",
+		"type": "deco",
+		"price": 100.5
+	},
     "Jurrasic Wooden Fence": {
 		"type": "fence",
 		"fence_options": {
 			"hasPost": true,
 			"flat": "SM_WoodenFence",
 			"post": "SM_WoodenFencePost"
+		}
+		"price": 100.5
+	},
+    "Jurassic Fence": {
+		"type": "fence",
+		"fence_options": {
+			"hasPost": true,
+			"flat": "SM_JurassicFence",
+			"post": "SM_JurassicFencePost"
 		}
 		"price": 100.5
 	}

@@ -10,59 +10,80 @@ namespace Custom_Scenery
     internal class SceneryLoader : MonoBehaviour
     {
         private List<BuildableObject> _sceneryObjects = new List<BuildableObject>();
-        
+
+        public string Path;
+
+        public string Identifier;
+
         public void LoadScenery()
         {
-            var dict = Json.Deserialize(File.ReadAllText(@"C:\Users\luukh\Desktop\ParkitectRecentBuild\mods\Custom Scenery\scenery.json")) as Dictionary<string, object>;
-
-            GameObject hider = new GameObject();
-
-            hider.SetActive(false);
-
-            using (WWW www = new WWW("file://" + Application.streamingAssetsPath + "/mods/custom-scenery/scenery"))
+            try
             {
-                if (www.error != null)
-                    throw new Exception("Download had an error:" + www.error);
+                var dict = Json.Deserialize(File.ReadAllText(Path + @"/scenery.json")) as Dictionary<string, object>;
 
-                AssetBundle bundle = www.assetBundle;
-                
-                foreach (KeyValuePair<string, object> pair in dict)
+                GameObject hider = new GameObject();
+
+                using (WWW www = new WWW("file://" + Application.streamingAssetsPath + "/mods/" + Identifier + "/scenery"))
                 {
-                    try
+                    if (www.error != null)
+                        throw new Exception("Loading had an error:" + www.error);
+
+                    AssetBundle bundle = www.assetBundle;
+
+                    foreach (KeyValuePair<string, object> pair in dict)
                     {
-                        var options = pair.Value as Dictionary<string, object>;
+                        try
+                        {
+                            var options = pair.Value as Dictionary<string, object>;
 
-                        GameObject asset;
+                            GameObject asset;
 
-                        asset = (new TypeDecorator((string)options["type"])).Decorate(options, bundle);
-                        asset = (new PriceDecorator((double)options["price"])).Decorate(asset, options, bundle);
-                        asset = (new NameDecorator(pair.Key)).Decorate(asset, options, bundle);
+                            asset = (new TypeDecorator((string)options["type"])).Decorate(options, bundle);
+                            asset = (new PriceDecorator((double)options["price"])).Decorate(asset, options, bundle);
+                            asset = (new NameDecorator(pair.Key)).Decorate(asset, options, bundle);
 
-                        if (options.ContainsKey("grid"))
-                            asset = (new GridDecorator((bool)options["grid"])).Decorate(asset, options, bundle);
+                            if (options.ContainsKey("grid"))
+                                asset = (new GridDecorator((bool)options["grid"])).Decorate(asset, options, bundle);
 
-                        DontDestroyOnLoad(asset);
+                            DontDestroyOnLoad(asset);
 
-                        AssetManager.Instance.registerObject(asset.GetComponent<BuildableObject>());
-                        _sceneryObjects.Add(asset.GetComponent<BuildableObject>());
+                            AssetManager.Instance.registerObject(asset.GetComponent<BuildableObject>());
+                            _sceneryObjects.Add(asset.GetComponent<BuildableObject>());
+                            
+                            // hide it from view
+                            asset.transform.parent = hider.transform;
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.Log(e);
 
-                        // hide it from view
-                        asset.transform.parent = hider.transform;
+                            LogException(e);
+                        }
                     }
-                    catch (Exception e)
-                    {
-                        Debug.Log(e);
-                        // ignore
-                    }
+
+                    bundle.Unload(false);
                 }
 
-                bundle.Unload(false);
+                hider.SetActive(false);
             }
+            catch(Exception e)
+            {
+                LogException(e);
+            }
+        }
+
+        private void LogException(Exception e)
+        {
+            StreamWriter sw = File.AppendText(Path + @"/mod.log");
+
+            sw.WriteLine(e);
+
+            sw.Flush();
         }
 
         public void UnloadScenery()
         {
-            foreach (Deco deco in _sceneryObjects)
+            foreach (BuildableObject deco in _sceneryObjects)
             {
                 AssetManager.Instance.unregisterObject(deco);
             }

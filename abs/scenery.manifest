@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2081223388
+CRC: 1230926266
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9af0c685c99f2315d1af7ae614cdcb29
+    Hash: 858a0545dbe0dc214c1cf7ac0d5ce04f
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 8f3210926c0cee44bd014bc6c48fb696
+    Hash: 4a42bbdd0d8333a9c21188b389158093
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -31,6 +31,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
 - Class: 111
   Script: {instanceID: 0}
 Assets:
@@ -41,11 +43,12 @@ Assets:
 - Assets/Terrain Assets/Trees Ambient-Occlusion/ScotsPineTypeA.fbx
 - Assets/Terrain Assets/Trees Ambient-Occlusion/ScotsPineTypeB.fbx
 - Assets/Terrain Assets/Trees Ambient-Occlusion/Sycamore.fbx
+- Assets/Resources/Models/SM_Velociraptors.prefab
+- Assets/Resources/Models/SM_WoodenFencePost.prefab
 - Assets/Terrain Assets/Trees Ambient-Occlusion/Bamboo.fbx
 - Assets/Resources/Models/SM_WoodenFence.FBX
 - Assets/Terrain Assets/Trees Ambient-Occlusion/Palm (group).fbx
 - Assets/Resources/Models/SM_JurassicFencePost.FBX
-- Assets/Resources/Models/SM_WoodenFencePost.FBX
 - Assets/Resources/Models/SM_JurassicGate_R.FBX
 - Assets/Resources/Models/SM_JurassicFence_Broken.FBX
 - Assets/Terrain Assets/Bushes/Bush2.fbx

@@ -6,19 +6,18 @@ using UnityEngine;
 
 namespace Custom_Scenery.Decorators
 {
-    class NameDecorator : IDecorator
+    class HeightDecorator : IDecorator
     {
-        private string _name;
+        private float _height;
 
-        public NameDecorator(string name)
+        public HeightDecorator(double height)
         {
-            _name = name;
+            _height = (float)height;
         }
 
         public GameObject Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
         {
-            go.GetComponent<BuildableObject>().setDisplayName(_name);
-            go.name = _name;
+            go.GetComponent<Deco>().heightChangeDelta = 0.25f;
 
             return go;
         }

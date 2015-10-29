@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Decorators\GridDecorator.cs" />
+    <Compile Include="Decorators\HeightDecorator.cs" />
     <Compile Include="Decorators\IDecorator.cs" />
     <Compile Include="Decorators\NameDecorator.cs" />
     <Compile Include="Decorators\PriceDecorator.cs" />
